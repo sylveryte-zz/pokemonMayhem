@@ -37,6 +37,7 @@ class Engine
 	 Arrays.fill(g,'.');
 	  for(boolean[] g : booleanBattleBoard)
 	 Arrays.fill(g,false);
+	 // no change
 	  
 	 
 	  
