@@ -352,9 +352,9 @@ class Engine
     pokemon[3]=new Pokemon("Charmendar",2,17,15,3,2,1);
     pokemon[4]=new Pokemon("Metapod ",2,10,20,4,4,8);
     pokemon[5]=new Pokemon("Onix    ",2,11,16,5,0,4);
-    pokemon[6]=new Pokemon("Raticate",2,7,18,6,8,6);
+    pokemon[6]=new Pokemon("Raticate",2,9,18,6,8,6);
     pokemon[7]=new Pokemon("Gastly   ",2,17,12,7,7,7);
-    pokemon[8]=new Pokemon("Kraby   ",2,5,21,8,8,1);
+    pokemon[8]=new Pokemon("Kraby   ",2,9,21,8,8,1);
     pokemon[9]=new Pokemon("Jiglypuff",2,7,7,9,1,8);	
 	
 	System.out.println("CO5G and Starx INC proudly presents!!\nPOKEMON MAYHEM\n");
