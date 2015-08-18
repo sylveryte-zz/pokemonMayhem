@@ -1,0 +1,61 @@
+CO5G and Starx INC proudly presents!!
+POKEMON MAYHEM
+
+Enter number of players[max10] (atleast 5 recommended)	 : 
+Select Your Pokemon!!
+ID	POKEMON		ATTACK	DEFENCE
+1	Pikachu  	15	14
+2	Squirtle  	13	18
+3	Bulbasaur	14	9
+4	Charmendar	17	15
+5	Metapod 	10	20
+6	Onix    	11	16
+7	Raticate	7	18
+8	Gastly   	17	12
+9	Kraby   	5	21
+10	Jiglypuff	7	7
+Choose : Enter Your Name : 
+Select Your Pokemon!!
+ID	POKEMON		ATTACK	DEFENCE
+1	Pikachu  	15	14
+2	Squirtle  	13	18
+3	Bulbasaur	14	9
+5	Metapod 	10	20
+6	Onix    	11	16
+7	Raticate	7	18
+8	Gastly   	17	12
+9	Kraby   	5	21
+10	Jiglypuff	7	7
+Choose : Enter Your Name : Let the battle begin!!
+MASTER	POKEMON		HEALTH	SHORT
+ajji	Pikachu  	50	P
+sandy	Charmendar	50	C
+######################################################
+
+||***************************RAPID ATTACK**************************||
+
+
+||*******************PIKACHU   VS CHARMENDAR*******************||
+
+PIKACHU   took Damage of 9
+CHARMENDAR DODGED!!!!!!!!!! like a baws
+PIKACHU   took Damage of 4
+CHARMENDAR took Damage of 9
+PIKACHU   took Damage of 15
+CHARMENDAR took Damage of 13
+PIKACHU   took Damage of 9
+CHARMENDAR took Damage of 5
+PIKACHU   DODGED!!!!!!!!!! like a baws
+CHARMENDAR took Damage of 8
+PIKACHU   took Damage of 11
+CHARMENDAR took Damage of 11
+PIKACHU   took Damage of 15
+
+||*******************PIKACHU   of AJJI is DEAD!!*******************||
+
+MASTER	POKEMON		HEALTH	SHORT
+ajji	Pikachu  	0	P
+sandy	Charmendar	14	C
+
+||#######################CHARMENDAR of SANDY is WINNNER#####################||
+
