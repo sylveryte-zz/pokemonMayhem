@@ -84,7 +84,7 @@ class Engine
       
    }
    
-   static void drawBattleBoard()
+   static void drawBattleBoard(Thread thr)
    {//drawing battleBoard
    
     
@@ -101,6 +101,14 @@ class Engine
      for(int i=0;i<21;i++)
 	   System.out.print("-");
       System.out.println();
+	 try
+	 {
+			thr.sleep(500);
+	 }
+	 catch(InterruptedException e)
+	 {
+		 System.out.println("wo thread ka "+e);
+	 }
 	 
 		 }
 		  
@@ -211,7 +219,7 @@ class Engine
         pokemon[id].setyPos(y); 
 	 }
 	 
-	 static void matter()
+	 static void matter(Thread thr)
 	 {//maater hota h na wo!!
 	    int x,y,d;
 		for(int i=0;i<pokemon[0].getCount();i++)
@@ -227,10 +235,25 @@ class Engine
 						   {
 						    System.out.println("\n"+pokemon[i].getName() + " VS " + pokemon[d].getName());
 						    pokemon[d].takeAttack(pokemon[i].getAttack());
-							// System.out.println(pokemon[i].getName() + " attacked " + pokemon[d].getName());
+try
+	 {
+			thr.sleep(2000);
+	 }
+	 catch(InterruptedException e)
+	 {
+		 System.out.println("wo thread ka "+e);
+	 }		
+		// System.out.println(pokemon[i].getName() + " attacked " + pokemon[d].getName());
 							if(pokemon[d].getAlive())
 							 pokemon[i].takeAttack(pokemon[d].getAttack());
-							
+		try
+	 {
+			thr.sleep(2000);
+	 }
+	 catch(InterruptedException e)
+	 {
+		 System.out.println("wo thread ka "+e);
+	 }					
 							 }
 							 }
 							 }
@@ -242,9 +265,25 @@ class Engine
 						   {
 						   System.out.println("\n"+pokemon[i].getName() + " VS " + pokemon[d].getName());
 						    pokemon[d].takeAttack(pokemon[i].getAttack());
-							 //System.out.println(pokemon[i].getName() + " attacked " + pokemon[d].getName());
+try
+	 {
+			thr.sleep(2000);
+	 }
+	 catch(InterruptedException e)
+	 {
+		 System.out.println("wo thread ka "+e);
+	 }	
+	//System.out.println(pokemon[i].getName() + " attacked " + pokemon[d].getName());
 							 if(pokemon[d].getAlive())
 							 pokemon[i].takeAttack(pokemon[d].getAttack());
+							try
+	 {
+			thr.sleep(2000);
+	 }
+	 catch(InterruptedException e)
+	 {
+		 System.out.println("wo thread ka "+e);
+	 }
 							 
 							 }
 							 }
@@ -267,7 +306,7 @@ class Engine
    
    }
    
-      static void rapidAttack(char i1, char i2)
+      static void rapidAttack(char i1, char i2,Thread thr)
    {  int x=0,y=0;
       
 	 
@@ -292,9 +331,25 @@ class Engine
       System.out.println("\n||*******************"+pokemon[x].getName().toUpperCase() + " VS " + pokemon[y].getName().toUpperCase() +"*******************||\n");
 	for(;pokemon[x].getAlive()&&pokemon[y].getAlive();)		  
 	{pokemon[x].takeAttack(pokemon[y].getAttack());
-      if(!pokemon[x].getAlive())
+      try
+	 {
+			thr.sleep(2000);
+	 }
+	 catch(InterruptedException e)
+	 {
+		 System.out.println("wo thread ka "+e);
+	 }
+	  if(!pokemon[x].getAlive())
            break;	  
 	 pokemon[y].takeAttack(pokemon[x].getAttack());
+	 try
+	 {
+			thr.sleep(2000);
+	 }
+	 catch(InterruptedException e)
+	 {
+		 System.out.println("wo thread ka "+e);
+	 }
 	 if(!pokemon[y].getAlive())
            break;
 	 }
@@ -309,7 +364,7 @@ class Engine
 	         }
    }
    
-   static void rapidAttack()
+   static void rapidAttack(Thread thr)
    {  int x=0,y=0;
       
 	 
@@ -333,9 +388,25 @@ class Engine
       System.out.println("\n||*******************"+pokemon[x].getName().toUpperCase() + " VS " + pokemon[y].getName().toUpperCase() +"*******************||\n");
 	for(;pokemon[x].getAlive()&&pokemon[y].getAlive();)		  
 	{pokemon[x].takeAttack(pokemon[y].getAttack());
-      if(!pokemon[x].getAlive())
+      try
+	 {
+			thr.sleep(2000);
+	 }
+	 catch(InterruptedException e)
+	 {
+		 System.out.println("wo thread ka "+e);
+	 }
+	  if(!pokemon[x].getAlive())
            break;	  
 	 pokemon[y].takeAttack(pokemon[x].getAttack());
+	 try
+	 {
+			thr.sleep(2000);
+	 }
+	 catch(InterruptedException e)
+	 {
+		 System.out.println("wo thread ka "+e);
+	 }
 	 if(!pokemon[y].getAlive())
            break;
 	 }
@@ -356,6 +427,8 @@ class Engine
     pokemon[7]=new Pokemon("Gastly   ",2,17,12,7,7,7);
     pokemon[8]=new Pokemon("Kraby   ",2,9,21,8,8,1);
     pokemon[9]=new Pokemon("Jiglypuff",2,7,7,9,1,8);	
+	
+	Thread thr=Thread.currentThread();
 	
 	System.out.println("CO5G and Starx INC proudly presents!!\nPOKEMON MAYHEM\n");
 	
@@ -382,8 +455,8 @@ class Engine
 
 	    for(int i=0;i<it;i++) 
 	    {buildBattleBoard();
-	    drawBattleBoard();
-		matter();
+	    drawBattleBoard(thr);
+		matter(thr);
 		//printXys();
 		move();
 		 }
@@ -408,7 +481,7 @@ class Engine
 			 System.out.print("\nName of pokemon 2 : ");
 			 char p2=sc.next().toUpperCase().charAt(0);
 		     
-		     rapidAttack(p1,p2);  
+		     rapidAttack(p1,p2,thr);  
             System.out.print("##");
         		 System.out.println();
 		    System.out.print("\n(h=help)Choice?? : ");
@@ -428,7 +501,7 @@ class Engine
 		  
 	   //clearConsole();
 	   }
-      rapidAttack();  
+      rapidAttack(thr);  
 		displayInfo();
 	int x=0;	 
 	for(int i=0;i<pokemon[0].getCount();i++)
