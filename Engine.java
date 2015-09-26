@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.io.*;
 import java.util.*;
 
@@ -7,7 +8,7 @@ import java.util.*;
  */
 
  
-class Engine
+class Engine extends Thread
 {
    final public static int xMAX=10;
    final public static int yMAX=10;
@@ -150,15 +151,44 @@ class Engine
 	
 	}
 	
-	static void displayInfo()
-	{//displayInfo
-	System.out.println("MASTER\tPOKEMON\t\tHEALTH\tSHORT");//this.masterName+"\t"+this.name+"\t"+this.health+"\t"+this.firstInitial);
+	
+	Engine()
+	{
+		Thread.currentThread().start();
+	}
+	public void run()
+	{
+		str.append("Health 		Name		Master \n");
+		//StringBuffer str=new StringBuffer()
+	//this.masterName+"\t"+this.name+"\t"+this.health+"\t"+this.firstInitial);
 	for(int i=0;i<10;i++)
 	{ 
 	  if(pokemon[i].getTaken())
-	    pokemon[i].displayInfo();
+		  str.append("\n");
+	    str.append(pokemon[i].displayInfo());
      }
-    }
+	 
+	 String str1=" "+str;
+	 b.setText(str1);
+	 try
+	 {
+		 Thread.sleep(1000);
+	 }
+	 catch(InterruptedException e){}
+	System.out.println("hello");
+	}
+	StringBuffer str=new StringBuffer(" ");
+	JFrame f=new JFrame();
+	JLabel b=new JLabel();
+	
+	 void displayInfo()
+	{//displayInfo
+			f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			f.getContentPane().add(b);
+			f.setSize(400,400);
+			f.setVisible(true);	
+			b.setText("hello");
+	}
 	static void move()
 	 {//moving pokemon
 	    for(int i=0;i<pokemon[0].getCount();i++)
@@ -431,12 +461,12 @@ try
 	Thread thr=Thread.currentThread();
 	
 	System.out.println("CO5G and Starx INC proudly presents!!\nPOKEMON MAYHEM\n");
-	
-	
+
 	
 	 getPlayers();
 	System.out.println("Let the battle begin!!");
-	displayInfo();
+	Engine eng=new Engine();
+	eng.displayInfo();
 	 
 	for(int i=0;i<27;i++)
 	   System.out.print("##");
@@ -489,7 +519,7 @@ try
 			}		
 					
 		if(m=='s')
-		  {displayInfo();
+		  {//displayInfo();
 		    		System.out.print("\n(h=help)Choice?? : ");
 	    m=sc.next().toLowerCase().charAt(0);
 		for(int i=0;i<27;i++)
@@ -502,7 +532,7 @@ try
 	   //clearConsole();
 	   }
       rapidAttack(thr);  
-		displayInfo();
+		//displayInfo();
 	int x=0;	 
 	for(int i=0;i<pokemon[0].getCount();i++)
 		   {

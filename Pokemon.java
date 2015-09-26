@@ -33,10 +33,10 @@ public class Pokemon
 	 this.ypos=y;
   }
   
-  public void displayInfo()
+  public String displayInfo()
   {
    
-    System.out.println(this.masterName+"\t"+this.name+"\t"+this.health+"\t"+this.firstInitial);
+    return this.health+"		"+this.name+"		"+this.masterName;
   
   }
   
