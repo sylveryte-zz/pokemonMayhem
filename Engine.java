@@ -151,14 +151,8 @@ class Engine extends Thread
 	
 	}
 	
-	class Enc implements Runnable 
-	{
-		
-	Enc()
-	{
-		//Thread.currentThread().start();
-		displayInfo();
-	}
+static class Enc implements Runnable 
+{
 	public void run()
 	{
 		str.append("Health 		Name		Master \n");
@@ -191,7 +185,8 @@ class Engine extends Thread
 			f.setSize(400,400);
 			f.setVisible(true);	
 			b.setText("hello");
-	}}
+	}
+}
 	static void move()
 	 {//moving pokemon
 	    for(int i=0;i<pokemon[0].getCount();i++)
