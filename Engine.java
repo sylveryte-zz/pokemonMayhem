@@ -151,10 +151,13 @@ class Engine extends Thread
 	
 	}
 	
-	
-	Engine()
+	class Enc implements Runnable 
 	{
-		Thread.currentThread().start();
+		
+	Enc()
+	{
+		//Thread.currentThread().start();
+		displayInfo();
 	}
 	public void run()
 	{
@@ -188,7 +191,7 @@ class Engine extends Thread
 			f.setSize(400,400);
 			f.setVisible(true);	
 			b.setText("hello");
-	}
+	}}
 	static void move()
 	 {//moving pokemon
 	    for(int i=0;i<pokemon[0].getCount();i++)
@@ -465,8 +468,9 @@ try
 	
 	 getPlayers();
 	System.out.println("Let the battle begin!!");
-	Engine eng=new Engine();
+	Enc eng=new Enc();
 	eng.displayInfo();
+	new Thread(eng).start();
 	 
 	for(int i=0;i<27;i++)
 	   System.out.print("##");
