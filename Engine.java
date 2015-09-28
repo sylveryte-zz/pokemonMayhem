@@ -160,11 +160,14 @@ static class Enc implements Runnable
 	//this.masterName+"\t"+this.name+"\t"+this.health+"\t"+this.firstInitial);
 	for(int i=0;i<10;i++)
 	{ 
-	  if(pokemon[i].getTaken())
-		  str.append("\n");
-	    str.append(pokemon[i].displayInfo());
+	  //if(pokemon[i].getTaken())
+	  {
+		//  str.append("||");
+	  
+	//    str.append(pokemon[i].displayInfo());
      }
-	 
+     str.append(pokemon[0].getHealth());
+	 str.append("||");
 	 String str1=" "+str;
 	 b.setText(str1);
 	 try
@@ -172,8 +175,8 @@ static class Enc implements Runnable
 		 Thread.sleep(1000);
 	 }
 	 catch(InterruptedException e){}
-	System.out.println("hello");
-	}
+	System.out.println("hello\n\n\n\n\n\n");
+	}}
 	StringBuffer str=new StringBuffer(" ");
 	JFrame f=new JFrame();
 	JLabel b=new JLabel();
